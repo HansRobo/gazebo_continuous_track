@@ -18,7 +18,7 @@
         </element>
     </element>
 
-    <element name="trajectory" required="1">
+    <element name="trajectory" required="0">
         <description>The trajectory (shape) of track</description>
         <element name="segment" required="+">
             <description>A segment of trajectory</description>
@@ -31,7 +31,20 @@
         </element>
     </element>
 
-    <element name="pattern" required="1">
+    <element name="track" required="0">
+        <description>Fallback track schema equivalent to ContinuousTrackSimple segment declarations.</description>
+        <element name="segment" required="+">
+            <description>A segment of track</description>
+            <element name="joint" type="string" default="__default__" required="1">
+                <description>An existing rotational or translational joint name.</description>
+            </element>
+            <element name="pitch_diameter" type="double" default="1.0" required="0">
+                <description>Pitch diameter for rotational segments. If omitted, sprocket ratio 1.0 is used.</description>
+            </element>
+        </element>
+    </element>
+
+    <element name="pattern" required="0">
         <description>The pattern of track shoe</description>
         <element name="elements_per_round" type="unsigned int" default="1" required="1">
             <description>The number of elements on entire track. Must be positive. Each element is placed [perimeter_of_track] / [elements_per_round] apart.</description>

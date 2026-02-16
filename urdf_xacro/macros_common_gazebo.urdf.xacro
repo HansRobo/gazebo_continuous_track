@@ -213,7 +213,6 @@
         <parent>${parent}</parent>
         <axis>
             <xyz>1 0 0</xyz>
-            <use_parent_model_frame>0</use_parent_model_frame>
         </axis>
         <physics>
             <ode>
@@ -235,7 +234,6 @@
         <pose>0 0 ${-radius} 0 0 0</pose>
         <axis>
             <xyz>0 1 0</xyz>
-            <use_parent_model_frame>0</use_parent_model_frame>
         </axis>
         <physics>
             <ode>
