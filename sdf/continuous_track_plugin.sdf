@@ -5,7 +5,7 @@
         <description>the name of plugin instance</description>
     </attribute>
     <attribute name="filename" type="string" default="__default__" required="1">
-        <description>the library file of plugin. normally 'libContinuousTrack.so'</description>
+        <description>the library file of plugin. normally 'libgz_continuous_track_system.so'</description>
     </attribute>
 
     <element name="sprocket" required="1">

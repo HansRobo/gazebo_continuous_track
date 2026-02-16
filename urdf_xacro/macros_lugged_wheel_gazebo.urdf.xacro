@@ -10,7 +10,7 @@
 
     <xacro:macro name="make_track_plugin_lugged_wheel" params="name sprocket_joint:=^ pitch_diameter:=^ *pattern">
         <gazebo>
-            <plugin name="${name}" filename="libContinuousTrack.so">
+            <plugin name="gazebo_continuous_track::ContinuousTrackSystem" filename="libgz_continuous_track_system.so">
                 <sprocket>
                     <joint>${sprocket_joint}</joint>
                     <pitch_diameter>${pitch_diameter}</pitch_diameter>

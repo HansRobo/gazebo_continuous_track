@@ -1,10 +1,28 @@
 # gazebo_continuous_track
-a realtime continuous track simulation for the Gazebo simulator & ROS with explicit consideration of friction and grouser geometry
 
-[![YouTube thumbnail](https://img.youtube.com/vi/0bPqNbOKPuQ/0.jpg)](https://www.youtube.com/watch?v=0bPqNbOKPuQ)
+ROS 2 / Gazebo Harmonic port of continuous-track simulation plugins.
 
-## Citation
-> Y. Okada, S. Kojima, K. Ohno and S. Tadokoro, "Real-time Simulation of Non-Deformable Continuous Tracks with Explicit Consideration of Friction and Grouser Geometry," 2020 IEEE International Conference on Robotics and Automation (ICRA), 2020
+## Provided plugins
 
-## Example
-[gazebo_continuous_track_example](https://github.com/yoshito-n-students/gazebo_continuous_track_example)
+- `gazebo_continuous_track::ContinuousTrackSimpleSystem`
+  - Library: `libgz_continuous_track_simple_system.so`
+  - SDF schema: `<sprocket> + <track>`
+- `gazebo_continuous_track::ContinuousTrackSystem`
+  - Library: `libgz_continuous_track_system.so`
+  - SDF schema: `<sprocket> + <trajectory>` (or `<track>` as fallback)
+  - Note: pattern-based visual switching from the original ROS 1 implementation is not fully ported.
+
+## Build
+
+```bash
+source /opt/ros/$ROS_DISTRO/setup.bash
+colcon build --packages-select gazebo_continuous_track
+```
+
+## Xacro macros
+
+Existing macros are kept in `urdf_xacro/` and updated for ROS 2 / Gazebo Harmonic:
+
+- `macros_track_simple_gazebo.urdf.xacro`
+- `macros_track_gazebo.urdf.xacro`
+- `macros_lugged_wheel_gazebo.urdf.xacro`

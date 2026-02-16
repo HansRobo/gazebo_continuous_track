@@ -12,7 +12,7 @@
 
     <xacro:macro name="make_track_simple_plugin" params="name sprocket_joint:=^ pitch_diameter:=^">
         <gazebo>
-            <plugin name="${name}" filename="libContinuousTrackSimple.so">
+            <plugin name="gazebo_continuous_track::ContinuousTrackSimpleSystem" filename="libgz_continuous_track_simple_system.so">
                 <sprocket>
                     <joint>${sprocket_joint}</joint>
                     <pitch_diameter>${pitch_diameter}</pitch_diameter>
@@ -49,7 +49,7 @@
 
     <xacro:macro name="make_track_simple_plugin_wheels" params="name sprocket_joint:=^ pitch_diameter:=^ count:=^">
         <gazebo>
-            <plugin name="${name}" filename="libContinuousTrackSimple.so">
+            <plugin name="gazebo_continuous_track::ContinuousTrackSimpleSystem" filename="libgz_continuous_track_simple_system.so">
                 <sprocket>
                     <joint>${sprocket_joint}</joint>
                     <pitch_diameter>${pitch_diameter}</pitch_diameter>
